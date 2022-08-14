@@ -5,6 +5,7 @@ tags: [docker, devops ]
 ---
 
 # Dockerfile 명령어 속성
+
 :whale: :whale: :whale:
 
 - `RUN`
@@ -86,11 +87,13 @@ RUN과 CMD 모두 명령어겠지~ 라고 생각하고 두 개의 차이점을 �
 핵심은 3가지 구문 모두 **실행시점**이 각자 다르다는 것!
 
 1. RUN 
+
 - 실행시점 : docker image가 빌드되는 동안 
 
 도커 엔진이 도커 파일을 한 줄 한 줄 읽으면서 이미지를 빌드할 때 실행된다. 
 
 2. CMD 
+
 - 실행시점 : 빌드가 완료되고 해당 이미지가 실행될 때 (시작)
 
 빌드되는 동안에 실행되는 것이 아니라, 실제로 이미지가 실행되기 시작할때 CMD 구문이 실행된다. 
@@ -100,12 +103,14 @@ docker run {image} {cmd_command}
 ```
 이런 경우에는 이미 dockerfile에 정의된 cmd 구문은 실행되지 않고 docker run에 인자값으로 넘긴 cmd 구문이 실행된다. 
 
+
 > [도커 공식 문서 중 CMD 관련 부분](https://docs.docker.com/engine/reference/builder/#cmd)
 >  
 > Do not confuse RUN with CMD. RUN actually runs a command and commits the result; CMD does not execute anything at build time, but specifies the intended command for the image.
 > => Run과 CDM를 헷갈리지말 것. Run은 명령구문을 실행하고 결과물을 저장한다. (= 이미지를 빌드한다는 뜻) CMD는 빌드 타임에는 아무것도 실행되지 않는다. 그러나 특정 커맨드를 의도대로 지정할 수 있다. (=동일 이미지에 가변적으로 명령어를 지정할 수 있다는 뜻)
 
-1. ENTRYPOINT
+3. ENTRYPOINT
+   
 - 실행시점 : CMD랑 같다 
 
 그럼 CMD와의 차이점은 docker run으로 CMD의 내용을 상황에 따라 바꿀 수 있는 것과 달리, 항상 실행된다는 점이다. 즉 dockerfile 내에서 정의한 ENTRYPOINT는 해당 컨테이너 실행시에 변경할 수 없다. 
@@ -147,7 +152,6 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 CMD가 두 번 사용되었기 때문에 빌드가 안 되고 있었던 상황이다.
 빌드라는 것은 이미지가 실행되기 전에 이미 완료되어야하는 작업이므로 빌드 중일 때 실행되는 명령어인 RUN을 사용하는 것이 맞다. 
-
 
 ### 5. Shell form, Exec form 
 run, cmd, entrypoint 모두 2가지 form을 지원하고 있다. 
