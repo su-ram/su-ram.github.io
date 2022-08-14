@@ -86,13 +86,13 @@ RUN과 CMD 모두 명령어겠지~ 라고 생각하고 두 개의 차이점을 �
 
 핵심은 3가지 구문 모두 **실행시점**이 각자 다르다는 것!
 
-1. RUN 
+**RUN** 
 
 - 실행시점 : docker image가 빌드되는 동안 
 
 도커 엔진이 도커 파일을 한 줄 한 줄 읽으면서 이미지를 빌드할 때 실행된다. 
 
-2. CMD 
+**CMD** 
 
 - 실행시점 : 빌드가 완료되고 해당 이미지가 실행될 때 (시작)
 
@@ -109,7 +109,7 @@ docker run {image} {cmd_command}
 > Do not confuse RUN with CMD. RUN actually runs a command and commits the result; CMD does not execute anything at build time, but specifies the intended command for the image.
 > => Run과 CDM를 헷갈리지말 것. Run은 명령구문을 실행하고 결과물을 저장한다. (= 이미지를 빌드한다는 뜻) CMD는 빌드 타임에는 아무것도 실행되지 않는다. 그러나 특정 커맨드를 의도대로 지정할 수 있다. (=동일 이미지에 가변적으로 명령어를 지정할 수 있다는 뜻)
 
-3. ENTRYPOINT
+**ENTRYPOINT**
    
 - 실행시점 : CMD랑 같다 
 
@@ -167,8 +167,7 @@ RUN ["yarn", "build"] // exec form
 
 
 ### 6. 나머지 공부 
-정리하면 도커파일 문법을 잘 몰라서 생긴 문제.
-https://docs.docker.com/engine/reference/builder/
+[정리하면 도커파일 문법을 잘 몰라서 생긴 문제.](https://docs.docker.com/engine/reference/builder/)
 
 
 
