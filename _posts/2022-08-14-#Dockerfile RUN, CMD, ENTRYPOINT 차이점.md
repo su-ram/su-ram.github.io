@@ -6,7 +6,6 @@ tags: [docker, devops ]
 
 # Dockerfile 명령어 속성
 
-:whale: :whale: :whale:
 
 - `RUN`
 - `CMD`
