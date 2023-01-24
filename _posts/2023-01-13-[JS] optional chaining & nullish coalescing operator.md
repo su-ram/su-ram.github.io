@@ -1,6 +1,6 @@
 ---
 title: JS에서 안전하게 널값 처리하기 Optional chaining(?.) & Nullish coalescing operator (??)
-categories: [JS, Javascript]
+categories: [JS]
 tags: [JS, Javascript, Nullish]
 ---
 
