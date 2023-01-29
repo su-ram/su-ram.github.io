@@ -5,7 +5,7 @@ tags: [JS, Javascript, Nullish]
 ---
 
 
-# JS에서 널값 안전하게 유연하게 처리하기 
+## JS에서 널값 안전하게 유연하게 처리하기 
 
 | Uncaught TypeError: Cannot read properties of undefined (reading 'xxx')
 
@@ -20,7 +20,7 @@ return xxxList?.ooProperty?.xxProperty ?? defaultValue
 찾아보니 `?.`연산자는 Optional Chaining, `??` 연산자는 Nullish coalescing operator 라고 한다. ES2020 표준으로 나름 최신 문법이다. 
 
 이 두 가지 연산자는 모두 객체의 널값과 관련이 있다. 접근하고자 하는 값이 nullish한 경우 undefined 에러를 뱉지 않고 분기처리할 수 있도록 도와준다. 따라서 해당 속성값을 참조하기 이전에 조건문 등으로 해당 값이 존재하는지 여부를 판단하는 코드를 추가할 필요 없이 속성에 접근하는 연산자만 사용하면 된다. 
-# Optional Chaining < ?. >
+## Optional Chaining < ?. >
 
 직독직해하면 선택적 체이닝. 선택적의 대상은 접근하고자하는 값이 nullish한지 여부다. ( nullish = null 또는 undefined.)
 nullish 여부에 따라 체이닝을 이어나가기도, 멈추기도할 수 있다.
@@ -90,7 +90,7 @@ car.engine.ddd?.prop // #2. return undefined
 
 
 
-# Nullish coalescing operator < ?? > 
+## Nullish coalescing operator < ?? > 
 
 ```javascript
 return xxxList?.ooProperty?.xxProperty ?? defaultValue
@@ -137,7 +137,7 @@ falsy한 값들도 고유한 값으로 인정하여 true하도록 하고 싶다�
 또한 다른 논리 연산자들처럼 왼쪽식이 false이면 오른쪽 식은 검증하지 않는다.
 
 
-# 안전하게 객체 속성에 접근하기 
+## 안전하게 객체 속성에 접근하기 
 MDN 문서에서는 `?.` 연산자와 `??` 연산자를 같이 사용하여 안전하게 속성값에 접근할 것을 권장하고 있다. 여기서 안전하게라는 말은 nullish한 객체의 속성을 접근하고자 하는 시도일 것이다. 
 ```javascript
 foo = { first : { prop: 100}}
@@ -146,7 +146,7 @@ foo.first?.prop ?? 'default value'
 `?.` 연산자로 값을 연속해서 접근해나가다 최종 접근 속성값이 undefined 또는 null 이라면 ?? 연산자 뒤의 값을 할당하는 방식으로 가장 많이 조합되어 쓰일 것 같다. 
 
 
-# 참고 
+## 참고 
 - Nullish 하다는 것 = 값이 Null 또는 undefined 
 - falsy 하다 = 논리식에서 false로 판단되는 값들 
   - false, 0, -0, ``, '', "", NaN, Null, undefined
