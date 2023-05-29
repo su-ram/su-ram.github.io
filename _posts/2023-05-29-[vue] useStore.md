@@ -19,6 +19,7 @@ setup() {
 ```
 
 - store 객체를 직접 다이렉트로 import 하는 경우 
+
 ```javascript
 import {store} from '@/../../store/index.js'
 
