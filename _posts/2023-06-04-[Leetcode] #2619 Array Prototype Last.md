@@ -1,5 +1,5 @@
 ---
-title: Leetcode | #2619 Array Prototype Last, #2620 Counter  
+title: Leetcode | 2619. Array Prototype Last, 2620. Counter  
 categories: [알고리즘]
 tags: [Leetcode, Problem Solving, 알고리즘, JS]
 ---
